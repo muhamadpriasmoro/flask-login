@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Include any additional CSS styles or links to external stylesheets here -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard-style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Selamat datang di Dashboard, {{ current_user.username }}!</h1>
+            <!-- Display additional user information if needed -->
+            <p>User ID: {{ current_user.id }}</p>
+        </header>
+
+        <section class="dashboard-content">
+            <h2>Konten Dashboard</h2>
+            <p>Selamat datang di halaman dashboard, {{ current_user.username }}! Ini adalah halaman khusus untuk pengguna yang sudah login.</p>
+            <p>Anda dapat menambahkan berbagai fitur dan informasi di sini sesuai dengan kebutuhan aplikasi Anda.</p>
+        </section>
+
+        <footer>
+            <form action="{{ url_for('logout') }}" method="POST">
+                <button type="submit">Keluar</button>
+            </form>
+        </footer>
+    </div>
+    <!-- Include any additional scripts or links to external JavaScript files here -->
+</body>
+</html>
